@@ -1,0 +1,133 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{261EC301-D993-4879-B5CF-8667BB087AF2}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FractalView</RootNamespace>
+    <AssemblyName>FractalView</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <ReleaseVersion>1.0 Stable</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>SdkOnly</LinkMode>
+    <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.60.3\lib\Xamarin.Mac20\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Mac">
+      <HintPath>..\packages\SkiaSharp.Views.1.60.3\lib\Xamarin.Mac20\SkiaSharp.Views.Mac.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_128x128.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_128x128%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_16x16.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_16x16%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_256x256.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_256x256%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_32x32.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_32x32%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_512x512.png" />
+    <ImageAsset Include="Assets.xcassets\Icons.appiconset\icon_512x512%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\" />
+    <Folder Include="Assets.xcassets\Icons.appiconset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Model\FractalCreator.cs" />
+    <Compile Include="Model\Common\Classes\ColorSettings.cs" />
+    <Compile Include="Model\Common\Classes\Complex.cs" />
+    <Compile Include="Model\Common\Classes\GenerationSettings.cs" />
+    <Compile Include="Model\Common\Enums\ColorAlgorithms.cs" />
+    <Compile Include="Model\Common\Enums\FractalEnumType.cs" />
+    <Compile Include="Model\Common\Enums\GenerationAlgorithms.cs" />
+    <Compile Include="Model\Fractals\AbstractFractal.cs" />
+    <Compile Include="Model\Fractals\FractalJulia.cs" />
+    <Compile Include="Model\Fractals\FractalLambda.cs" />
+    <Compile Include="Model\Fractals\FractalMandelbrot.cs" />
+    <Compile Include="NSImageViewCustom.cs" />
+    <Compile Include="GenSettingsViewController.cs" />
+    <Compile Include="MainViewController.cs" />
+    <Compile Include="MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenSettingsViewController.designer.cs">
+      <DependentUpon>GenSettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSettingsViewController.cs" />
+    <Compile Include="ColorSettingsViewController.designer.cs">
+      <DependentUpon>ColorSettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FractalTypeViewController.cs" />
+    <Compile Include="FractalTypeViewController.designer.cs">
+      <DependentUpon>FractalTypeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutProgramViewController.cs" />
+    <Compile Include="AboutProgramViewController.designer.cs">
+      <DependentUpon>AboutProgramViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateImageViewController.cs" />
+    <Compile Include="CreateImageViewController.designer.cs">
+      <DependentUpon>CreateImageViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>
