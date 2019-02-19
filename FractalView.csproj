@@ -53,10 +53,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="SkiaSharp">
-      <HintPath>..\packages\SkiaSharp.1.60.3\lib\Xamarin.Mac20\SkiaSharp.dll</HintPath>
+      <HintPath>..\packages\SkiaSharp.1.68.0\lib\Xamarin.Mac20\SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp.Views.Mac">
-      <HintPath>..\packages\SkiaSharp.Views.1.60.3\lib\Xamarin.Mac20\SkiaSharp.Views.Mac.dll</HintPath>
+      <HintPath>..\packages\SkiaSharp.Views.1.68.0\lib\Xamarin.Mac20\SkiaSharp.Views.Mac.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
